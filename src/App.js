@@ -1,7 +1,6 @@
 import NavBar from './layouts/NavBar';
 import ListingJumboltron from './layouts/ListingJumboltron';
 import AllArticles from './components/AllArticles';
-import img from "./images/image_1.png";
 import Footer from './layouts/Footer';
 
 function App() {
