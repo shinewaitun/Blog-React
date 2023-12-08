@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './layouts/NavBar';
+import ListingJumboltron from './layouts/ListingJumboltron';
+import AllArticles from './components/AllArticles';
+import img from "./images/image_1.png";
+import Footer from './layouts/Footer';
 
 function App() {
+  const title = "Here are something you should know regarding how we work";
+  const articles = [
+    {
+      img: img,
+      title: title
+    },
+    {
+      img: img,
+      title: title
+    },
+    {
+      img: img,
+      title: title
+    },
+    {
+      img: img,
+      title: title
+    }
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      < NavBar />
+      <ListingJumboltron />
+      <h1 className='text-center text-black fw-bold'>All Articles</h1>
+      <AllArticles articles={articles}/>
+      <Footer/>
     </div>
   );
 }
