@@ -5,6 +5,7 @@ import Footer from './layouts/Footer';
 
 function App() {
   const title = "Here are something you should know regarding how we work";
+  const img = "https://ideas.demco.com/wp-content/uploads/2014/12/Upstart-Traditions.jpg";
   const articles = [
     {
       img: "https://blog.lingoda.com/wp-content/uploads/2021/07/mexican-traditions-scaled-e1627035111698.jpg",
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       < NavBar />
-      <ListingJumboltron />
+      <ListingJumboltron img={img}/>
       <h1 className='text-center text-black fw-bold'>All Articles</h1>
       <AllArticles articles={articles}/>
       <Footer/>
