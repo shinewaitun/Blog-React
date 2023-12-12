@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "./BlogCard";
+import BlogCard from "src/components/BlogCard";
 
 export default function AllArticles({ articles }) {
   return (
