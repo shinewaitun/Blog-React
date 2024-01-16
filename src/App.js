@@ -1,9 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "src/layouts/Layout";
+import AdminLayout from "src/layouts/AdminLayout";
 import HomePage from "src/pages/HomePage";
 import ArticlePage from "src/pages/ArticlePage";
 import LoginPage from "src/pages/LoginPage";
 import SignupPage from "src/pages/SignupPage";
+import Dashboard from "src/pages/DashboardPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,7 +20,17 @@ function App() {
         {
           path: "/article",
           element: <ArticlePage />,
-        }
+        },
+      ],
+    },
+    {
+      path: "/admin",
+      element: <AdminLayout />,
+      children: [
+        {
+          path: "/admin",
+          element: <Dashboard />,
+        },
       ],
     },
     {
