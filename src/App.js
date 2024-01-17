@@ -28,7 +28,7 @@ function App() {
     {
       path: "/signup",
       element: <SignupPage />,
-    },
+    }
   ]);
 
   return (
