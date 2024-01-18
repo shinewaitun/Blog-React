@@ -6,6 +6,7 @@ import ArticlePage from "src/pages/ArticlePage";
 import LoginPage from "src/pages/LoginPage";
 import SignupPage from "src/pages/SignupPage";
 import Dashboard from "src/pages/DashboardPage";
+import BlogListPage from "src/pages/BlogListPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -31,6 +32,10 @@ function App() {
           path: "/admin",
           element: <Dashboard />,
         },
+        {
+          path: "/admin/blog_list",
+          element: <BlogListPage />,
+        },
       ],
     },
     {
@@ -40,7 +45,7 @@ function App() {
     {
       path: "/signup",
       element: <SignupPage />,
-    }
+    },
   ]);
 
   return (
