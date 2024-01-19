@@ -15,7 +15,15 @@ const data = [
   { name: "Pending", value: 5 },
   { name: "Rejected", value: 2 },
 ];
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
+
+const COLORS = ["#0c73f3", "#ff8600", "#f71213"];
+
+const modalOptions = {
+  firstBtnColor: "btn-primary",
+  firstBtnName: "Approve",
+  secondBtnColor: "btn-danger",
+  secondBtnName: "Reject",
+};
 
 function DashboardPage() {
   return (
@@ -57,25 +65,25 @@ function DashboardPage() {
           <h5 className="mb-5">Blog Information</h5>
           <div
             className="btn btn-lg w-75"
-            style={{ backgroundColor: "blue", color: "white" }}
+            style={{ backgroundColor: COLORS[0], color: "white" }}
           >
             10
           </div>
           <div
             className="btn btn-lg w-75"
-            style={{ backgroundColor: "yellow", color: "white" }}
+            style={{ backgroundColor: COLORS[1], color: "white" }}
           >
             5
           </div>
           <div
             className="btn btn-lg w-75"
-            style={{ backgroundColor: "aquamarine", color: "white" }}
+            style={{ backgroundColor: COLORS[2], color: "white" }}
           >
             2
           </div>
         </div>
       </div>
-      <Table />
+      <Table options={modalOptions} />
     </div>
   );
 }

@@ -18,10 +18,10 @@ export default function NavBar() {
           className="justify-content-end"
         >
           <Nav className="d-flex justify-content-end">
-            <Nav.Link href="#home" className="border-bottom border-dark">
+            <Nav.Link href="/" className="border-bottom border-dark">
               BLOG
             </Nav.Link>
-            <Nav.Link href="#features">ABOUT</Nav.Link>
+            <Nav.Link href="/about">ABOUT</Nav.Link>
             <Nav.Link href="#pricing">LINKS</Nav.Link>
             <Nav.Link href="#pricing">PROJECT</Nav.Link>
           </Nav>

@@ -37,6 +37,9 @@ function AdminSidebar() {
           <span>Blog List</span>
         </button>
         <button
+          onClick={() => {
+            navigate("/admin/user_list");
+          }}
           className={`d-flex flex-row justify-content-start align-items-center gap-3 btn btn-outline-primary btn-sm border-0 rounded-0 px-4 ${
             location.pathname === "/admin/user_list" ? "active" : ""
           }`}

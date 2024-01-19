@@ -7,6 +7,8 @@ import LoginPage from "src/pages/LoginPage";
 import SignupPage from "src/pages/SignupPage";
 import Dashboard from "src/pages/DashboardPage";
 import BlogListPage from "src/pages/BlogListPage";
+import UserListPage from "src/pages/UserListPage";
+import ProfilePage from "src/pages/ProfilePage";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +24,10 @@ function App() {
           path: "/article",
           element: <ArticlePage />,
         },
+        {
+          path: "/profile",
+          element: <ProfilePage />,
+        },
       ],
     },
     {
@@ -35,6 +41,10 @@ function App() {
         {
           path: "/admin/blog_list",
           element: <BlogListPage />,
+        },
+        {
+          path: "/admin/user_list",
+          element: <UserListPage />,
         },
       ],
     },
