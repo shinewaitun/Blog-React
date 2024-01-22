@@ -2,10 +2,12 @@ import React from "react";
 import ProfileInfo from "../components/ProfileInfo";
 import data from "src/data/data.json";
 import Table from "../components/Table";
+import UserNav from "../layouts/UserNav";
 
 function ProfilePage() {
   return (
     <div>
+      <UserNav title={"PROFILE"} />
       <div className="w-75 mx-auto">
         <ProfileInfo user={data.user} />
       </div>
