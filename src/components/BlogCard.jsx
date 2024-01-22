@@ -1,15 +1,17 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
+import React from "react";
+import { Card } from "react-bootstrap";
 
-export default function BlogCard({ img,title }) {
+export default function BlogCard({ img, title }) {
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img style={{ height: '10rem' }} variant="top" src={img} />
+    <Card>
+      <Card.Img
+        style={{ height: "12rem", width: "auto" }}
+        variant="top"
+        src={img}
+      />
       <Card.Body>
-        <Card.Text>
-          {title}
-        </Card.Text>
+        <Card.Text>{title}</Card.Text>
       </Card.Body>
     </Card>
-  )
+  );
 }
