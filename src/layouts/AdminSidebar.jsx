@@ -50,6 +50,9 @@ function AdminSidebar() {
           <span>User List</span>
         </button>
         <button
+          onClick={() => {
+            navigate("/admin/management");
+          }}
           className={`d-flex flex-row justify-content-start align-items-center gap-3 btn btn-outline-primary btn-sm border-0 rounded-0 px-4 ${
             location.pathname === "/admin/management" ? "active" : ""
           }`}
@@ -60,8 +63,11 @@ function AdminSidebar() {
           <span>Admin Management</span>
         </button>
         <button
+          onClick={() => {
+            navigate("/admin/category_list");
+          }}
           className={`d-flex flex-row justify-content-start align-items-center gap-3 btn btn-outline-primary btn-sm border-0 rounded-0 px-4 ${
-            location.pathname === "/admin/category" ? "active" : ""
+            location.pathname === "/admin/category_list" ? "active" : ""
           }`}
         >
           <span>
@@ -70,6 +76,9 @@ function AdminSidebar() {
           <span>Category</span>
         </button>
         <button
+          onClick={() => {
+            navigate("/admin/block_list");
+          }}
           className={`d-flex flex-row justify-content-start align-items-center gap-3 btn btn-outline-primary btn-sm border-0 rounded-0 px-4 ${
             location.pathname === "/admin/block_list" ? "active" : ""
           }`}

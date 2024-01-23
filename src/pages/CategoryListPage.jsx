@@ -1,20 +1,21 @@
+import React from "react";
 import Table from "../components/Table";
 import AdminNav from "../layouts/AdminNav";
 
 const modalOptions = {
-  firstBtnColor: "btn-success",
-  firstBtnName: "Active",
+  firstBtnColor: "btn-primary",
+  firstBtnName: "Approve",
   secondBtnColor: "btn-danger",
-  secondBtnName: "Inactive",
+  secondBtnName: "Reject",
 };
 
-function UserListPage() {
+function CategoryListPage() {
   return (
     <div>
-      <AdminNav title={"User List"} />
+      <AdminNav title={"Category"} />
       <Table options={modalOptions} />
     </div>
   );
 }
 
-export default UserListPage;
+export default CategoryListPage;

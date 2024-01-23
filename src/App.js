@@ -13,6 +13,9 @@ import ProfilePage from "src/pages/ProfilePage";
 import AddBlogPage from "src/pages/AddBlogPage";
 import UpdateBlogPage from "src/pages/UpdateBlogPage";
 import BlogInfoPage from "src/pages/BlogInfoPage";
+import CategoryPage from "src/pages/CategoryListPage";
+import BlockListPage from "src/pages/BlockedListPage";
+import ManagementPage from "src/pages/ManagementPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -67,6 +70,18 @@ function App() {
         {
           path: "/admin/user_list",
           element: <UserListPage />,
+        },
+        {
+          path: "/admin/block_list",
+          element: <BlockListPage />,
+        },
+        {
+          path: "/admin/category_list",
+          element: <CategoryPage />,
+        },
+        {
+          path: "/admin/management",
+          element: <ManagementPage />,
         },
       ],
     },

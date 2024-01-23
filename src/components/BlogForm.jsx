@@ -1,4 +1,12 @@
 import React from "react";
+import SelectBox from "./ReactSelect";
+import ImageUpload from "./ImageUpload";
+
+const options = [
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "vanilla", label: "Vanilla" },
+];
 
 function BlogForm({ form }) {
   return (
@@ -18,36 +26,7 @@ function BlogForm({ form }) {
           <small id="imageLabel" className="form-text text-muted">
             Images
           </small>
-          <button
-            type="button"
-            className="form-control btn btn-outline-secondary py-2"
-            aria-describedby="imageLabel"
-          >
-            Add
-          </button>
-        </div>
-        <div className="d-flex flex-column justify-content-center w-100 gap-2">
-          <div className="d-flex flex-column gap-1 w-75 h-auto mx-auto">
-            <button className="btn btn-danger align-self-end">Remove</button>
-            <img
-              src="https://media.istockphoto.com/id/1304289911/photo/my-vision-of-female-face.jpg?s=612x612&w=0&k=20&c=PqJ9iL628RILnaVYcCWSFqLj4IxVR7826Lt9t8FknOo="
-              alt="art"
-            />
-          </div>
-          <div className="d-flex flex-column gap-1 w-75 h-auto mx-auto">
-            <button className="btn btn-danger align-self-end">Remove</button>
-            <img
-              src="https://media.istockphoto.com/id/1304289911/photo/my-vision-of-female-face.jpg?s=612x612&w=0&k=20&c=PqJ9iL628RILnaVYcCWSFqLj4IxVR7826Lt9t8FknOo="
-              alt="art"
-            />
-          </div>
-          <div className="d-flex flex-column gap-1 w-75 h-auto mx-auto">
-            <button className="btn btn-danger align-self-end">Remove</button>
-            <img
-              src="https://media.istockphoto.com/id/1304289911/photo/my-vision-of-female-face.jpg?s=612x612&w=0&k=20&c=PqJ9iL628RILnaVYcCWSFqLj4IxVR7826Lt9t8FknOo="
-              alt="art"
-            />
-          </div>
+          <ImageUpload />
         </div>
       </div>
       <div className="d-flex flex-column justify-content-start align-items-start gap-3 w-50">
@@ -65,13 +44,9 @@ function BlogForm({ form }) {
           <small id="titleLabel" className="form-text text-muted">
             Category
           </small>
-          <select class="form-control py-2 w-100" aria-describedby="titleLabel">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+          <div aria-describedby="titleLabel">
+            <SelectBox options={options} />
+          </div>
         </div>
         <div className="form-group w-100">
           <small id="titleLabel" className="form-text text-muted">
