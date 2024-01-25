@@ -4,14 +4,16 @@ import data from "src/data/data.json";
 import Table from "../components/Table";
 import UserNav from "../layouts/UserNav";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 function ProfilePage() {
   const navigate = useNavigate();
+  const userInfo = useSelector((state) => state.auth.userInfo);
   return (
     <div>
       <UserNav title={"PROFILE"} />
       <div className="w-75 mx-auto">
-        <ProfileInfo user={data.user} />
+        <ProfileInfo user={userInfo} />
       </div>
       <div className="d-flex justify-content-between px-5">
         <div>

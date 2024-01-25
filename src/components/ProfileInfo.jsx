@@ -15,17 +15,17 @@ function ProfileInfo({ user }) {
         </div>
         <div className="w-100 d-flex justify-content-center">
           <span className="w-50">USERNAME</span>
-          <span className="w-50">: Jessica Everest</span>
+          <span className="w-50">: {user.username}</span>
         </div>
       </div>
       <div className="d-flex flex-column justify-content-center align-items-start align-self-end w-50 gap-4">
         <div className="w-100 d-flex justify-content-center">
           <span className="w-50">STATUS</span>
-          <span className="text-success w-50">: ACTIVE</span>
+          <span className="text-success w-50">: {user.status}</span>
         </div>
         <div className="w-100 d-flex justify-content-center">
           <span className="w-50">EMAIL</span>
-          <span className="w-50">: jessica@gmail.com</span>
+          <span className="w-50">: {user.email}</span>
         </div>
       </div>
     </div>

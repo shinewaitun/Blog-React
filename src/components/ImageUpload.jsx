@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 
 function ImageUpload() {
   const [images, setImages] = React.useState([]);
-  const maxNumber = 69;
+  const maxNumber = 8;
   const onChange = (imageList, addUpdateIndex) => {
     setImages(imageList);
     console.log(images);
