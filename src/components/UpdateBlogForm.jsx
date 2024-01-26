@@ -8,7 +8,7 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
-function BlogForm({ form }) {
+function UpdateBlogForm() {
   return (
     <form className="w-100 d-flex justify-content-center gap-5 mb-5 mt-2 px-5">
       <div className="d-flex flex-column justify-content-start align-items-start gap-3 w-50">
@@ -60,11 +60,11 @@ function BlogForm({ form }) {
           />
         </div>
         <div className="form-group w-100">
-          <button className={`btn w-100 ${form.btnColor}`}>{form.type}</button>
+          <button className={`btn w-100 btn-warning text-white`}>Update</button>
         </div>
       </div>
     </form>
   );
 }
 
-export default BlogForm;
+export default UpdateBlogForm;

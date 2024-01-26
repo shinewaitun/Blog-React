@@ -1,8 +1,41 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import toast from "react-hot-toast";
+import { signup } from "../services/user.services";
+import { useUserMutate } from "../hooks/useUserQuery";
+
+const validationSchema = Yup.object({
+  username: Yup.string().required("Username is required!") ,
+  email: Yup.string().required("Email is required!"),
+  password: Yup.string().required("Password is required!")
+})
 
 export default function SignupPage() {
   const navigate = useNavigate();
+  const {mutate,data} = useUserMutate(signup);
+
+  const handleSubmit = (values) => {
+    mutate(values);
+    // if(data.data.status !== 'success') {
+    //   toast.error("Register Failed!")
+    // }
+    console.log(data);
+    toast.success("Registered successfully!");
+    navigate("/login");
+  }
+
+  const formik = useFormik({
+    initialValues:{
+      username: '',
+      email: '',
+      password: ''
+    },
+    validationSchema: validationSchema,
+    onSubmit: handleSubmit
+  })
 
   return (
     <div className="vw-100 vh-100 d-flex flex-column flex-md-row justify-content-center align-items-center">
@@ -28,7 +61,7 @@ export default function SignupPage() {
           <span className="text-secondary">or</span>
           <span className="border-top border-1 w-25"></span>
         </div>
-        <form className="d-flex flex-column align-content-center justify-content-center gap-3 w-75">
+        <form className="d-flex flex-column align-content-center justify-content-center gap-3 w-75" onSubmit={formik.handleSubmit}>
           <div className="form-group">
             <input
               className="form-control p-3"
@@ -36,7 +69,13 @@ export default function SignupPage() {
               name="username"
               id="username"
               placeholder="username"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.username}
             />
+            {formik.touched.username && formik.errors.username && (
+              <div className="text-danger">{formik.errors.username}</div>
+            )}
           </div>
           <div className="form-group">
             <input
@@ -45,7 +84,13 @@ export default function SignupPage() {
               name="email"
               id="email"
               placeholder="email"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
             />
+            {formik.touched.email && formik.errors.email && (
+              <div className="text-danger">{formik.errors.email}</div>
+            )}
           </div>
           <div className="form-group">
             <input
@@ -54,7 +99,13 @@ export default function SignupPage() {
               name="password"
               id="password"
               placeholder="password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
             />
+            {formik.touched.password && formik.errors.password && (
+              <div className="text-danger">{formik.errors.password}</div>
+            )}
           </div>
           <div className="d-flex gap-2">
             <button className="btn btn-dark rounded-1 w-50 p-3" type="submit">

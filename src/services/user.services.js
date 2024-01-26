@@ -7,3 +7,11 @@ export const login = async (data) => {
     return error;
   }
 };
+
+export const signup = async (data) => {
+  try {
+    return await interceptor.post("/user/signUp", data);
+  } catch (error) {
+    return error;
+  }
+}

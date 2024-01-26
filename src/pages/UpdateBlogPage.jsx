@@ -1,17 +1,12 @@
 import React from "react";
 import UserNav from "../layouts/UserNav";
-import BlogForm from "../components/BlogForm";
-
-const formType = {
-  type: "Update",
-  btnColor: "btn-warning text-white",
-};
+import UpdateBlogForm from "../components/UpdateBlogForm";
 
 function UpdateBlogPage() {
   return (
     <div>
       <UserNav title={"UPDATE CONTENT"} />
-      <BlogForm form={formType} />
+      <UpdateBlogForm/>
     </div>
   );
 }
