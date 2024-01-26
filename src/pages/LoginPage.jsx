@@ -23,7 +23,7 @@ export default function LoginPage() {
   const handleSubmit = (values) => {
     mutate(values);
     const userData = data.data.data.user;
-    if (data.data.status !== 'success') {
+    if (data && data.data.status !== "success") {
       setAuthError(true);
       toast.error("Sign in failed!");
       setTimeout(() => {

@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../components/Table";
+import Table from "../components/CategoryTable";
 import AdminNav from "../layouts/AdminNav";
 
 function BlogList() {

@@ -1,21 +1,14 @@
 import React from "react";
-import Table from "../components/Table";
+import Table from "../components/CategoryTable";
 import AdminNav from "../layouts/AdminNav";
 import { getcategories } from "../services/category.services";
 import { useQuery } from "react-query";
 
-const modalOptions = {
-  firstBtnColor: "btn-primary",
-  firstBtnName: "Approve",
-  secondBtnColor: "btn-danger",
-  secondBtnName: "Reject",
-  isCategoryForm: true,
-};
-
-const headers = ["Name", "Creator", "Updater", "CreatedAt", "UpdatedAt", " "];
-
 function CategoryListPage() {
-  const { data, isLoading } = useQuery(["key"], getcategories);
+  const { data, isLoading, isError, refetch } = useQuery(
+    ["key"],
+    getcategories
+  );
   let categories;
   if (!isLoading) {
     categories = data.data.data.content;
@@ -23,7 +16,7 @@ function CategoryListPage() {
   return (
     <div>
       <AdminNav title={"Category"} />
-      <Table options={modalOptions} data={categories} headers={headers} />
+      <Table data={categories} refetch={refetch} />
     </div>
   );
 }

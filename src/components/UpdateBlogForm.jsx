@@ -1,6 +1,4 @@
 import React from "react";
-import SelectBox from "./ReactSelect";
-import ImageUpload from "./ImageUpload";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -26,7 +24,6 @@ function UpdateBlogForm() {
           <small id="imageLabel" className="form-text text-muted">
             Images
           </small>
-          <ImageUpload />
         </div>
       </div>
       <div className="d-flex flex-column justify-content-start align-items-start gap-3 w-50">
@@ -44,9 +41,7 @@ function UpdateBlogForm() {
           <small id="titleLabel" className="form-text text-muted">
             Category
           </small>
-          <div aria-describedby="titleLabel">
-            <SelectBox options={options} />
-          </div>
+          <div aria-describedby="titleLabel"></div>
         </div>
         <div className="form-group w-100">
           <small id="titleLabel" className="form-text text-muted">

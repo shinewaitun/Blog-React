@@ -1,14 +1,20 @@
 import React from "react";
 import ProfileInfo from "../components/ProfileInfo";
-import data from "src/data/data.json";
-import Table from "../components/Table";
+import Table from "../components/BlogTable";
 import UserNav from "../layouts/UserNav";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
+import { getblogs } from "../services/blog.service";
+import { useQuery } from "react-query";
 
 function ProfilePage() {
   const navigate = useNavigate();
   const userInfo = useSelector((state) => state.auth.userInfo);
+  const { data, isLoading } = useQuery("key", getblogs);
+  let blogs;
+  if (!isLoading) {
+    blogs = data.data.data.content;
+  }
   return (
     <div>
       <UserNav title={"PROFILE"} />
@@ -31,7 +37,7 @@ function ProfilePage() {
       </div>
       <div className="w-100 px-5 py-3">
         <div className="border rounded-2 shadow">
-          <Table />
+          <Table data={blogs} />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import AdminNav from "../layouts/AdminNav";
-import Table from "../components/Table";
+import Table from "../components/CategoryTable";
 
 const modalOptions = {
   firstBtnColor: "btn-primary",
