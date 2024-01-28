@@ -28,7 +28,7 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "/article",
+          path: "/article/:id",
           element: <ArticlePage />,
         },
       ],

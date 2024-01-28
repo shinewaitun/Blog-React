@@ -15,3 +15,11 @@ export const getblogs = async () => {
     return error;
   }
 };
+
+export const getblog = async (id) => {
+  try {
+    return await interceptor.get(`/blog/findById/${id}`)
+  } catch (error) {
+    return error
+  }
+}

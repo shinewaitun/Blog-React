@@ -71,30 +71,20 @@ export default function ArticleDetails() {
                 width="25"
                 height="25"
               />
-              <span>
-                Share on Facebook
-              </span>
+              <span>Share on Facebook</span>
             </span>
           </Button>
           <Button className="border border-secondary " variant="white">
             <span className="px-1 d-flex justify-content-center gap-4">
-              <Icon 
-                icon="mdi:twitter" 
-                color="black" 
-                width="25" 
-                height="25" />
-            <span>
-              Share on Twitter
-            </span>
+              <Icon icon="mdi:twitter" color="black" width="25" height="25" />
+              <span>Share on Twitter</span>
             </span>
           </Button>
         </ButtonGroup>
         <div className="my-2">
-          Tags : 
-          <NavLink to={'#'}>product design, </NavLink>
-          <NavLink to={'#'}>culture</NavLink>
+          Tags :<NavLink to={"#"}>product design, </NavLink>
+          <NavLink to={"#"}>culture</NavLink>
         </div>
-        
       </div>
     </div>
   );
